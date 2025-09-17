@@ -79,7 +79,6 @@ class PowerPointProvider(PdfProvider):
                     shape_type = shape.shape_type
                 except Exception as e:
                     print(traceback.format_exc())
-                    continue
                 else:
                     if shape_type == MSO_SHAPE_TYPE.GROUP:
                         html_parts.append(self._handle_group(shape))
@@ -125,7 +124,6 @@ class PowerPointProvider(PdfProvider):
                 shape_type = shape.shape_type
             except Exception as e:
                 print(traceback.format_exc())
-                continue
             else:
                 if shape_type == MSO_SHAPE_TYPE.GROUP:
                     group_parts.append(self._handle_group(shape))
